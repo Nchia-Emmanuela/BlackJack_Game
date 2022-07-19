@@ -7,6 +7,15 @@ def random_card():
     card = random.choice(card)
     return card
 
+def calc_score(cards):
+    """Takes a list of card and returns the sum of all items in the card"""
+    if sum(cards) == 21 and len(cards) == 2:
+        return 0
+    if 11 in cards and sum(cards ) > 21:
+        cards.remove(11)
+        cards.append(1)
+    sum(cards)
+
 player_cards = []
 computer_card = []
 
@@ -14,5 +23,5 @@ for i in range(2):
     player_cards.append(random_card())
     computer_card.append(random_card())
 
-def calc_score(cards):
-    sum(cards)
+players_score = calc_score(player_cards)
+computers_score = calc_score(computer_card)
