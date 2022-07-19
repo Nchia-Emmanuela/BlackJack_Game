@@ -25,5 +25,18 @@ for i in range(2):
     player_cards.append(random_card())
     computer_card.append(random_card())
 
-players_score = calc_score(player_cards)
-computers_score = calc_score(computer_card)
+
+while not is_game_over:
+    players_score = calc_score(player_cards)
+    computers_score = calc_score(computer_card)
+    print(f"your cards: {player_cards}, current score: {players_score}")
+    print(f"Computer's first card: {computer_card[0]}, current score: {computers_score}")
+
+    if players_score == 0 or computers_score == 0 or players_score > 21:
+        is_game_over = True
+    else:
+        take_card = input("type y to take another card type n to pass: ")
+        if take_card == "y":
+            player_cards.append(random_card())
+        else:
+            is_game_over = True
