@@ -19,6 +19,8 @@ def calc_score(cards):
 player_cards = []
 computer_card = []
 
+is_game_over = False
+
 for i in range(2):
     player_cards.append(random_card())
     computer_card.append(random_card())
