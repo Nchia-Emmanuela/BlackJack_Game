@@ -40,3 +40,7 @@ while not is_game_over:
             player_cards.append(random_card())
         else:
             is_game_over = True
+
+while computers_score != 0 and computers_score < 17:
+    computer_card.append(random_card())
+    computers_score = calc_score(computer_card)
